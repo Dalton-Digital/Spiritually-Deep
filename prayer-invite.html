@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Prayer Session – Spiritually Deep</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0e8f5;
+    font-family: 'Lato', sans-serif;
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(160deg, #e8d5f5 0%, #f5d9e8 40%, #fde8d0 75%, #f5e8d5 100%);
+    box-shadow: 0 30px 80px rgba(180,120,200,0.25), 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  /* Radial glow like the template */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(255,230,180,0.55) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Butterfly top right */
+  .butterfly {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    width: 80px;
+    opacity: 0.75;
+    animation: flutter 4s ease-in-out infinite;
+  }
+
+  @keyframes flutter {
+    0%, 100% { transform: rotate(-3deg) scale(1); }
+    50% { transform: rotate(3deg) scale(1.04); }
+  }
+
+  /* Sparkles */
+  .sparkle {
+    position: absolute;
+    pointer-events: none;
+  }
+  .sparkle svg { opacity: 0.5; animation: twinkle 2.5s ease-in-out infinite; }
+  .sparkle-1 { bottom: 34%; left: 28px; }
+  .sparkle-1 svg { animation-delay: 0s; }
+  .sparkle-2 { bottom: 28%; left: 40px; }
+  .sparkle-2 svg { animation-delay: 0.8s; width: 14px; }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.85); }
+    50% { opacity: 0.7; transform: scale(1.15); }
+  }
+
+  .inner {
+    position: relative;
+    padding: 44px 36px 36px;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .brand-script {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2.6rem;
+    color: #2a1a3e;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+
+  .brand-deep {
+    font-family: 'Cinzel', serif;
+    font-size: 1.55rem;
+    font-weight: 500;
+    color: #2a1a3e;
+    letter-spacing: 4px;
+    margin-top: -4px;
+  }
+
+  .tagline {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 2.5px;
+    color: #7a5a8a;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 auto 24px;
+    width: 80%;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(150,90,170,0.4), transparent);
+  }
+  .divider-cross {
+    color: rgba(150,90,170,0.5);
+    font-size: 1rem;
+  }
+
+  .event-type {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    color: #9a6aaa;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .event-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.1rem;
+    font-weight: 400;
+    color: #2a1a3e;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .event-name em {
+    font-style: italic;
+    color: #7a3a9a;
+  }
+
+  .event-sub {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 0.82rem;
+    color: #6a4a7a;
+    letter-spacing: 1.5px;
+    margin-bottom: 28px;
+  }
+
+  .details-box {
+    background: rgba(255,255,255,0.38);
+    border: 1px solid rgba(200,160,220,0.3);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 22px;
+    backdrop-filter: blur(4px);
+  }
+
+  .detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.88rem;
+    color: #3a2050;
+  }
+  .detail-row:last-child { margin-bottom: 0; }
+
+  .detail-icon { font-size: 1rem; }
+
+  .detail-label {
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  .detail-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #5a2a7a;
+  }
+
+  .hosts-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #9a6aaa;
+    margin-bottom: 6px;
+  }
+
+  .hosts {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #3a1a5a;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* Buttons */
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 13px 20px;
+    border-radius: 50px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 2.5px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #8b3fa8, #c46aaa);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(140,60,170,0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(140,60,170,0.4);
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.5);
+    color: #5a2a7a;
+    border: 1px solid rgba(160,100,190,0.35);
+  }
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.7);
+    transform: translateY(-1px);
+  }
+
+  /* Reminder section */
+  .reminder-section {
+    background: rgba(255,255,255,0.3);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(200,150,220,0.25);
+  }
+
+  .reminder-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9a6aaa;
+    margin-bottom: 10px;
+  }
+
+  .reminder-options {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .reminder-btn {
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(160,100,190,0.4);
+    background: rgba(255,255,255,0.5);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    color: #5a2a7a;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .reminder-btn:hover, .reminder-btn.active {
+    background: linear-gradient(135deg, #8b3fa8, #c46aaa);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  .reminder-confirm {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: #7a4a8a;
+    font-style: italic;
+    display: none;
+  }
+
+  .footer-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #7a5a8a;
+    opacity: 0.85;
+  }
+
+  /* Timezone note */
+  .tz-note {
+    font-size: 0.7rem;
+    color: #9a7aaa;
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  /* Success toast */
+  .toast {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #5a2a7a;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5px;
+    z-index: 999;
+    animation: fadeSlide 0.4s ease;
+  }
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <!-- Butterfly SVG -->
+  <svg class="butterfly" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M60 50 C40 20, 5 10, 10 35 C15 55, 45 55, 60 50Z" stroke="#2a1a3e" stroke-width="1.5" fill="none"/>
+    <path d="M60 50 C80 20, 115 10, 110 35 C105 55, 75 55, 60 50Z" stroke="#2a1a3e" stroke-width="1.5" fill="none"/>
+    <path d="M60 50 C45 65, 20 75, 25 62 C30 50, 52 52, 60 50Z" stroke="#2a1a3e" stroke-width="1.5" fill="none"/>
+    <path d="M60 50 C75 65, 100 75, 95 62 C90 50, 68 52, 60 50Z" stroke="#2a1a3e" stroke-width="1.5" fill="none"/>
+    <line x1="60" y1="48" x2="54" y2="38" stroke="#2a1a3e" stroke-width="1.2"/>
+    <line x1="60" y1="48" x2="66" y2="38" stroke="#2a1a3e" stroke-width="1.2"/>
+  </svg>
+
+  <!-- Sparkles -->
+  <div class="sparkle sparkle-1">
+    <svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 0 L11 9 L20 10 L11 11 L10 20 L9 11 L0 10 L9 9 Z" fill="#9a6aaa"/></svg>
+  </div>
+  <div class="sparkle sparkle-2">
+    <svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 0 L11 9 L20 10 L11 11 L10 20 L9 11 L0 10 L9 9 Z" fill="#9a6aaa"/></svg>
+  </div>
+
+  <div class="inner">
+    <!-- Brand -->
+    <div class="brand">
+      <span class="brand-script">spirituality</span>
+      <span class="brand-deep">deep</span>
+    </div>
+    <div class="tagline">Stay with God</div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-cross">✦</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="event-type">You are invited to join</div>
+    <div class="event-name">A Global<br><em>Prayer Session</em></div>
+    <div class="event-sub">Together in Spirit · Worldwide</div>
+
+    <!-- Details -->
+    <div class="details-box">
+      <div class="detail-row">
+        <span class="detail-icon">📅</span>
+        <span class="detail-label">Date:</span>
+        <span class="detail-value">Saturday, 7 June 2026</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🕒</span>
+        <span class="detail-label">Time:</span>
+        <span class="detail-value">3:00 PM SAST</span>
+      </div>
+      <div class="tz-note">🌍 US friends — check your local time (EST: 8AM · PST: 5AM)</div>
+    </div>
+
+    <!-- Hosts -->
+    <div class="hosts-label">Hosted by</div>
+    <div class="hosts">
+      Leslee &nbsp;·&nbsp; Alexis &nbsp;·&nbsp; Sadee Neshehe
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-group">
+      <a class="btn btn-primary" href="https://www.youtube.com/@SpirituallyDeep" target="_blank">
+        ▶ &nbsp; JOIN ON YOUTUBE
+      </a>
+      <button class="btn btn-secondary" onclick="shareInvite()">
+        ↗ &nbsp; SHARE THIS INVITATION
+      </button>
+    </div>
+
+    <!-- Reminder -->
+    <div class="reminder-section">
+      <div class="reminder-title">⏰ Set a Reminder</div>
+      <div class="reminder-options">
+        <button class="reminder-btn" onclick="setReminder(15, this)">15 min before</button>
+        <button class="reminder-btn" onclick="setReminder(60, this)">1 hour before</button>
+        <button class="reminder-btn" onclick="setReminder(1440, this)">1 day before</button>
+      </div>
+      <div class="reminder-confirm" id="reminderMsg">✓ Reminder set!</div>
+    </div>
+
+    <div class="footer-text">"Where two or three gather in my name, there I am with them."</div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  function showToast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.display = 'block';
+    setTimeout(function() { t.style.display = 'none'; }, 3000);
+  }
+
+  function setReminder(minutesBefore, btn) {
+    // Remove active from siblings
+    var btns = document.querySelectorAll('.reminder-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+    btn.classList.add('active');
+
+    // Prayer session: Saturday June 7 2026, 15:00 SAST = 13:00 UTC
+    var sessionTime = new Date('2026-06-07T13:00:00Z');
+    var reminderTime = new Date(sessionTime.getTime() - minutesBefore * 60000);
+    var now = new Date();
+
+    if (reminderTime < now) {
+      showToast('That reminder time has already passed!');
+      return;
+    }
+
+    // Try to add to calendar via URL
+    var title = encodeURIComponent('Global Prayer Session – Spiritually Deep');
+    var details = encodeURIComponent('Join Leslee, Alexis & Sadee Neshehe on YouTube: https://www.youtube.com/@SpirituallyDeep');
+    var start = '20260607T130000Z';
+    var end = '20260607T140000Z';
+
+    var calUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + title
+      + '&dates=' + start + '/' + end
+      + '&details=' + details
+      + '&location=' + encodeURIComponent('https://www.youtube.com/@SpirituallyDeep');
+
+    window.open(calUrl, '_blank');
+
+    var msg = document.getElementById('reminderMsg');
+    msg.style.display = 'block';
+    msg.textContent = '✓ Opening your calendar to save the event!';
+  }
+
+  function shareInvite() {
+    var text = '🙏 You\'re invited to a Global Prayer Session!\n\n'
+      + '📅 Saturday, 7 June 2026\n'
+      + '🕒 3:00 PM SAST\n'
+      + '📍 YouTube: @SpirituallyDeep\n\n'
+      + 'Hosted by Leslee, Alexis & Sadee Neshehe\n\n'
+      + 'Join us: https://www.youtube.com/@SpirituallyDeep\n\n'
+      + '"Stay with God." 🕊️';
+
+    if (navigator.share) {
+      navigator.share({ title: 'Global Prayer Session – Spiritually Deep', text: text })
+        .catch(function() {});
+    } else {
+      navigator.clipboard.writeText(text).then(function() {
+        showToast('✓ Invite text copied! Paste into WhatsApp, Facebook or TikTok.');
+      }).catch(function() {
+        showToast('Copy the page link to share!');
+      });
+    }
+  }
+</script>
+</body>
+</html>
